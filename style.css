@@ -1,8 +1,12 @@
 :root {
-    --color1: #fafafb
-    --color2: #9a67ea
-    --color3: #04d4c3
-    --color4: #2a73c2
-    --color5: #2c7b90
+    --color1: #fafafb;
+    --color2: #9a67ea;
+    --color3: #04d4c3;
+    --color4: #2a73c2;
+    --color5: #2c7b90;
 }
 
+body {
+    background: linear-gradient(to bottom,var(--color2), var(--color3));
+    height: 100vh;
+}
