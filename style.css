@@ -46,3 +46,9 @@ padding: 50px 0 5px 0;
     border: none;
     background-color: var(--color1);
 }
+
+.addTask i{
+    font: 50px;
+    color: var(--color2);
+    
+}
