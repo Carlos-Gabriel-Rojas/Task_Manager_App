@@ -26,3 +26,15 @@ span{
 #date{
 padding: 50px 0 5px 0;
 }
+
+/* add task */
+
+.addTask{
+    background-color: var(--color1);
+    border-radius: 15px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 70px;
+}
