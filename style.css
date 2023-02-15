@@ -10,3 +10,19 @@ body {
     background: linear-gradient(to bottom,var(--color2), var(--color3));
     height: 100vh;
 }
+
+/* profile*/
+
+#date,
+.profile h1,
+span{
+    color:var(--color1);
+}
+
+.profile span{
+    letter-spacing: 1px;
+}
+
+#date{
+padding: 50px 0 5px 0;
+}
