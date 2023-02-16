@@ -48,7 +48,7 @@ padding: 50px 0 5px 0;
 }
 
 .addTask i{
-    font: 50px;
+    font-size: 50px;
     color: var(--color2);
-    
+
 }
