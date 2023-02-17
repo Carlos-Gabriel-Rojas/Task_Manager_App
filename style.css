@@ -83,7 +83,12 @@ padding: 50px 0 5px 0;
 }
 
 .taskSection li{
-    
+    display: flex;
+    background: linear-gradient(to bottom,var(--color4),var(--color5));
+    border-radius: 15px;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .taskSection i{
