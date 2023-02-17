@@ -78,11 +78,12 @@ padding: 50px 0 5px 0;
 /* task section */
 
 .taskSection h3{    
-
+    color: var(--color1);
+    margin-bottom: 20px;
 }
 
 .taskSection li{
-
+    
 }
 
 .taskSection i{
