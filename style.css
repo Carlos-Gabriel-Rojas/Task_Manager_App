@@ -64,3 +64,13 @@ padding: 50px 0 5px 0;
     font-size: 50px;
     color: var(--color2);
 }
+
+.addTask i:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.addTask input::placeholder{
+    font-size: 1.1rem;
+    color: var(--color2);
+}
