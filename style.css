@@ -92,7 +92,11 @@ padding: 50px 0 5px 0;
 }
 
 .taskSection i{
-
+    font-size: 25px;
+}
+.taskSection i:hover{
+    color: var(--color3);
+    cursor: pointer;
 }
 
 .taskSection ul > p {
