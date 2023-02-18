@@ -89,6 +89,8 @@ padding: 50px 0 5px 0;
     padding: 10px;
     align-items: center;
     justify-content: space-between;
+    margin: 5px 0;
+    color: var(--color1);
 }
 
 .taskSection i{
