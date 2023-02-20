@@ -21,3 +21,13 @@ enterBtn.addEventListener("click", ()=> {
     }
     input.value=""
 })
+
+document.addEventListener("keyup",function (event) {
+    if(event.key == "Enter") {
+        const task= input.value
+        if (task) {
+            addTask(task)   
+        }
+        input.value=""
+    }
+})
