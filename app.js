@@ -44,13 +44,20 @@ document.addEventListener("keyup",function (event) {
     }
 })
 
+//taskDone function
+
+function taskDone(element){
+    element.classList.toggle(check)
+    element.classList.toggle(uncheck)
+}
+
 list.addEventListener("click",function (event) {
     const element= event.target
     const elementData= element.attributes.data.value
     if(elementData === "done") {
-        taskDone()
+        taskDone(element)
     }
     else if (elementData === "deleated"){
-        deleatedTask()
+        deleatedTask(element)
     } 
 })
