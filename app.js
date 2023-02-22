@@ -5,7 +5,7 @@ const enterBtn= document.querySelector("#enterBtn")
 const check= "fa-check-circle"
 const uncheck= "fa-circle"
 const lineThrough= "line-through"
-const id= 0
+let id= 0
 
 //add task function
 function addTask(task,id,done,deleated) {
@@ -42,4 +42,15 @@ document.addEventListener("keyup",function (event) {
         input.value=""
         id++
     }
+})
+
+list.addEventListener("click",function (event) {
+    const element= event.target
+    const elementData= element.attributes.data.value
+    if(elementData === "done") {
+        taskDone()
+    }
+    else if (elementData === "deleated"){
+        deleatedTask()
+    } 
 })
