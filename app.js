@@ -49,6 +49,7 @@ document.addEventListener("keyup",function (event) {
 function taskDone(element){
     element.classList.toggle(check)
     element.classList.toggle(uncheck)
+    element.parentNode.querySelector(".text").classList.toggle(lineThrough)
 }
 
 list.addEventListener("click",function (event) {
