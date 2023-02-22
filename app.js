@@ -9,10 +9,16 @@ const id= 0
 
 //add task function
 function addTask(task,id,done,deleated) {
+
+    if(deleated){return}
+
+    const DONE= done ?check :uncheck
+    const LINE= done ?lineThrough :""
+
     const element= `<li id="element">
-                    <i class="far fa-cicle co" data="done" id="0"></i>
-                    <p class="text">${task}</p>
-                    <i class="fas fa-trash de" data="deleted" id="0"></i>
+                    <i class="far ${DONE}" data="done" id="${id}"></i>
+                    <p class="text ${LINE}">${task}</p>
+                    <i class="fas fa-trash de" data="deleted" id="${id}"></i>
                     </li>
                    `
     list.insertAdjacentHTML("beforeend",element)
