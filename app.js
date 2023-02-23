@@ -8,6 +8,12 @@ const lineThrough= "line-through"
 let id= 0
 const LIST= []
 
+//date function
+
+const DATE= new Date()
+date.innerHTML= DATE.toLocaleDateString("en-US", {weekday:"long", month:"short", day:"numeric"})
+
+
 //add task function
 function addTask(task,id,done,deleated) {
 
@@ -63,12 +69,14 @@ function taskDone(element){
     element.classList.toggle(check)
     element.classList.toggle(uncheck)
     element.parentNode.querySelector(".text").classList.toggle(lineThrough)
+    LIST[element.id].done= LIST[element, id].done ?false :true
 }
 
 //deleated task function
 
 function deleatedTask(element) {
     element.parentNode.parentNode.removeChild(element.parentNode)
+    LIST[element.id].deleated = true
 }
 
 
