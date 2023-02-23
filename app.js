@@ -6,6 +6,7 @@ const check= "fa-check-circle"
 const uncheck= "fa-circle"
 const lineThrough= "line-through"
 let id= 0
+const LIST= []
 
 //add task function
 function addTask(task,id,done,deleated) {
@@ -28,6 +29,12 @@ enterBtn.addEventListener("click", ()=> {
     const task= input.value
     if (task) {
        addTask(task,id,false,false) 
+       LIST.push({
+        name: task,
+        id: id,
+        done: false,
+        deleated: false
+       })
     }
     input.value=""
     id++
@@ -38,6 +45,12 @@ document.addEventListener("keyup",function (event) {
         const task= input.value
         if (task) {
             addTask(task,id,false,false)   
+            LIST.push({
+                name: task,
+                id: id,
+                done: false,
+                deleated: false
+               })
         }
         input.value=""
         id++
