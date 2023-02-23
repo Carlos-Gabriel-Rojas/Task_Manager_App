@@ -52,6 +52,16 @@ function taskDone(element){
     element.parentNode.querySelector(".text").classList.toggle(lineThrough)
 }
 
+//deleated task function
+
+function deleatedTask(element) {
+    element.parentNode.parentNode.removeChild(element.parentNode)
+}
+
+
+
+
+
 list.addEventListener("click",function (event) {
     const element= event.target
     const elementData= element.attributes.data.value
