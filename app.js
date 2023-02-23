@@ -25,7 +25,7 @@ function addTask(task,id,done,deleated) {
     const element= `<li id="element">
                     <i class="far ${DONE}" data="done" id="${id}"></i>
                     <p class="text ${LINE}">${task}</p>
-                    <i class="fas fa-trash de" data="deleted" id="${id}"></i>
+                    <i class="fas fa-trash de" data="deleated" id="${id}"></i>
                     </li>
                    `
     list.insertAdjacentHTML("beforeend",element)
@@ -93,3 +93,7 @@ list.addEventListener("click",function (event) {
         deleatedTask(element)
     } 
 })
+
+
+
+
