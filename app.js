@@ -5,8 +5,8 @@ const enterBtn= document.querySelector("#enterBtn")
 const check= "fa-check-circle"
 const uncheck= "fa-circle"
 const lineThrough= "line-through"
-let id= 0
-const LIST= []
+let id
+let LIST
 
 //date function
 
@@ -97,6 +97,22 @@ list.addEventListener("click",function (event) {
     localStorage.setItem("TODO", JSON.stringify(LIST))
 })
 
+//local storage get item
 
+let localData= localStorage.getItem("TODO")
+if(localData) {
+    LIST=JSON.parse(localData)
+    id= LIST.lenght
+    saveList(LIST)
+} else {
+    LIST= []
+    id= 0
+}
+
+function saveList(DATA) {
+    DATA.forEach(function(i){
+        addTask(i.name, i.id, i.done, i.deleated)
+    })
+}
 
 
