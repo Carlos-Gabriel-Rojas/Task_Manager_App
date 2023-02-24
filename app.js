@@ -42,6 +42,7 @@ enterBtn.addEventListener("click", ()=> {
         deleated: false
        })
     }
+    localStorage.setItem("TODO", JSON.stringify(LIST))
     input.value=""
     id++
 })
@@ -58,6 +59,7 @@ document.addEventListener("keyup",function (event) {
                 deleated: false
                })
         }
+        localStorage.setItem("TODO", JSON.stringify(LIST))
         input.value=""
         id++
     }
@@ -92,6 +94,7 @@ list.addEventListener("click",function (event) {
     else if (elementData === "deleated"){
         deleatedTask(element)
     } 
+    localStorage.setItem("TODO", JSON.stringify(LIST))
 })
 
 
