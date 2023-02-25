@@ -4,16 +4,20 @@
     --color3: #04d4c3;
     --color4: #2a73c2;
     --color5: #2c7b90;
+    --color6: #42275a;
+    --color7: #734b6d;
 }
 
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Oswald', sans-serif;
 }
 
 body {
     background: linear-gradient(to bottom,var(--color2), var(--color3));
+    background-attachment: fixed;
     height: 100vh;
 }
 
@@ -38,7 +42,9 @@ span{
 
 #date{
 padding: 50px 0 5px 0;
+font-weight: 300;
 }
+
 
 /* add task */
 
