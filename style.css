@@ -6,6 +6,7 @@
     --color5: #2c7b90;
     --color6: #42275a;
     --color7: #734b6d;
+    --color8: #9d6381;
 }
 
 *{
@@ -16,7 +17,7 @@
 }
 
 body {
-    background: linear-gradient(to bottom,var(--color2), var(--color3));
+    background: linear-gradient(to bottom,var(--color6), var(--color7));
     background-attachment: fixed;
     height: 100vh;
 }
@@ -69,7 +70,7 @@ font-weight: 300;
 
 .addTask i{
     font-size: 50px;
-    color: var(--color2);
+    color: var(--color8);
 }
 
 .addTask i:hover{
@@ -79,7 +80,7 @@ font-weight: 300;
 
 .addTask input::placeholder{
     font-size: 1.1rem;
-    color: var(--color2);
+    color: var(--color8);
 }
 
 /* task section */
@@ -91,7 +92,7 @@ font-weight: 300;
 
 .taskSection li{
     display: flex;
-    background: linear-gradient(to bottom,var(--color4),var(--color5));
+    background: linear-gradient(to bottom,var(--color8),var(--color6));
     border-radius: 15px;
     padding: 10px;
     align-items: center;

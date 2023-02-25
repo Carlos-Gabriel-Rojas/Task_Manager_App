@@ -1,5 +1,6 @@
 const date= document.querySelector("#date")
 const list= document.querySelector("#taskList")
+const elemento = document.querySelector("#elemento")
 const input= document.querySelector("#addTaskInput")
 const enterBtn= document.querySelector("#enterBtn")
 const check= "fa-check-circle"
@@ -14,37 +15,61 @@ const DATE= new Date()
 date.innerHTML= DATE.toLocaleDateString("en-US", {weekday:"long", month:"short", day:"numeric"})
 
 
+
 //add task function
 function addTask(task,id,done,deleated) {
 
     if(deleated){return}
 
-    const DONE= done ?check :uncheck
-    const LINE= done ?lineThrough :""
+    const DONE= done ? check : uncheck
+    const LINE= done ? lineThrough : ""
 
-    const element= `<li id="element">
-                    <i class="far ${DONE}" data="done" id="${id}"></i>
-                    <p class="text ${LINE}">${task}</p>
-                    <i class="fas fa-trash de" data="deleated" id="${id}"></i>
-                    </li>
+    const elemento= `
+                        <li id="elemento">
+                        <i class="far ${DONE}" data="done" id="${id}"></i>
+                        <p class="text ${LINE}">${task}</p>
+                        <i class="fas fa-trash de" data="deleated" id="${id}"></i>
+                        </li>
                    `
-    list.insertAdjacentHTML("beforeend",element)
+    list.insertAdjacentHTML("beforeend",elemento)
 }
+
+//taskDone function
+
+function taskDone(element){
+    element.classList.toggle(check)
+    element.classList.toggle(uncheck)
+    element.parentNode.querySelector(".text").classList.toggle(lineThrough)
+    LIST[element.id].done = LIST[element.id].done ?false :true
+}
+
+//deleated task function
+
+function deleatedTask(element) {
+    console.log(element.parentNode)
+    console.log(element.parentNode.parentNode)
+    element.parentNode.parentNode.removeChild(element.parentNode)
+    LIST[element.id].deleated = true
+    console.log(LIST)
+}
+
 
 enterBtn.addEventListener("click", ()=> {
     const task= input.value
     if (task) {
        addTask(task,id,false,false) 
        LIST.push({
-        name: task,
-        id: id,
-        done: false,
-        deleated: false
+            name : task,
+            id : id,
+            done : false,
+            deleated : false
        })
+       localStorage.setItem("TODO",JSON.stringify(LIST))
+       id++
+       input.value= ''
     }
-    localStorage.setItem("TODO", JSON.stringify(LIST))
-    input.value=""
-    id++
+    
+    
 })
 
 document.addEventListener("keyup",function (event) {
@@ -58,41 +83,29 @@ document.addEventListener("keyup",function (event) {
                 done: false,
                 deleated: false
                })
+               localStorage.setItem("TODO", JSON.stringify(LIST))
+
+               input.value = ''
+               id++
+               console.log(LIST)
         }
-        localStorage.setItem("TODO", JSON.stringify(LIST))
-        input.value=""
-        id++
+        
     }
 })
-
-//taskDone function
-
-function taskDone(element){
-    element.classList.toggle(check)
-    element.classList.toggle(uncheck)
-    element.parentNode.querySelector(".text").classList.toggle(lineThrough)
-    LIST[element.id].done= LIST[element, id].done ?false :true
-}
-
-//deleated task function
-
-function deleatedTask(element) {
-    element.parentNode.parentNode.removeChild(element.parentNode)
-    LIST[element.id].deleated = true
-}
-
-
 
 
 
 list.addEventListener("click",function (event) {
     const element= event.target
     const elementData= element.attributes.data.value
-    if(elementData === "done") {
+    console.log(elementData)
+
+    if(elementData == "done") {
         taskDone(element)
     }
-    else if (elementData === "deleated"){
+    else if (elementData == "deleated"){
         deleatedTask(element)
+        console.log("deleated")
     } 
     localStorage.setItem("TODO", JSON.stringify(LIST))
 })
@@ -101,17 +114,18 @@ list.addEventListener("click",function (event) {
 
 let localData= localStorage.getItem("TODO")
 if(localData) {
-    LIST=JSON.parse(localData)
-    id= LIST.lenght
+    LIST = JSON.parse(localData)
+    console.log(LIST)
+    id = LIST.lenght
     saveList(LIST)
 } else {
     LIST= []
     id= 0
 }
 
-function saveList(DATA) {
-    DATA.forEach(function(i){
-        addTask(i.name, i.id, i.done, i.deleated)
+function saveList(array) {
+    array.forEach(function(item){
+        addTask(item.name,item.id,item.done,item.deleated)
     })
 }
 
